@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<html>
+    
+    <body>
+
+        <h1 id="heading">All about dogs</h1>
+        
+        <p>The domestic <span class="animal">dog</span> is known as man's best friend. The <span class="animal">dog</span> was the first domesticated animal and has been widely kept as a working, hunting, and pet companion. According to recent coarse estimates, there are currently between 700 million and one billion <span class="animal">dog</span>s, making them the most abundant predators in the world. <a href="http://en.wikipedia.org/wiki/Dog">Read more on Wikipedia</a>.</p>
+        
+        <img src="https://www.kasandbox.org/programming-images/animals/dog_sleeping-puppy.png" height="150">
+        
+        <img src="https://www.kasandbox.org/programming-images/animals/dogs_collies.png" height="150">
+        
+        <script>
+            var headingEl = document.getElementById("heading");
+            headingEl.innerHTML = "All about cats";
+            
+            var nameEls = document.getElementsByTagName("span");
+            console.log(nameEls);
+            // HTMLCollection
+            // console.log(nameEls[0]);
+            nameEls.innerHTML = "cats"; // it will not change the elements because our innerhtml selects arry of element, not each elemnets.
+            // so we have to use for loof to select each element in the arry.
+            // Problem with span element is there might be other span elements we don't want to change.
+            //In this case it is better to use class name
+            var nameEls = document.getElementsByClassName("animal");
+            for (let i=0;i<nameEls.length;i++){
+                nameEls[i].innerHTML="cats"
+                nameEls[i].innerHTML= "<em> cats</em>";
+                nameEls[i].innerHTML="<strong>cats</strong>";
+            } 
+        </script>
+        
+    </body>
+
+
+
+
+
+<!-- <body>
+ <a href=""></a>
+
+<script>
+    let apiData= async ()=>{
+
+        let response = await fetch('https://restcountries.com/v3.1/currency/dollar');
+        let data = await response.json();
+        return data;
+    } 
+    //apiData();
+    // it does not return any data. It basically return a promise. So we need to modify it
+    //let finalData= apiData();
+    //console.log(finalData);
+    // it stil bring a promise
+    apiData() 
+    .then(data => console.log('resolved:', data));
+    .catch(err => console.log('rejected:', err.message));
+</script>
+
+
+
+<script>
+
+    function time(ms){
+        return new Promise((resolve, reject)=>{
+            if (is_shope_open){
+                setTimeout(resolve, ms);
+            } else{
+                reject(console.log("shop is closed"))
+            }
+        })
+    }
+</script>
+
+
+
+
+</body> -->
+</html>
